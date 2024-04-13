@@ -57,7 +57,9 @@
       position: absolute;
       animation: progress 4s ease-in-out forwards;
     }
-
+.Texts{
+  font-size:60px;
+}
     @keyframes progress {
       0% {
         width: 0;
@@ -65,6 +67,15 @@
 
       100% {
         width: 100%;
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      .load-bar_border {
+        width: 90%;
+        max-width: none;
+      }
+      .Texts{
+        font-size: medium;
       }
     }
   </style>
@@ -76,7 +87,7 @@
     <img class="w3-image" src="https://cdn.nitrome.com/generated-content/images/avalanche/tile.png" alt="Main-image">
     <div class="w3-display-middle">
       <h1 class="w3-xxlarge w3-text-white w3-wide">
-        <span class=" w3-hide-small" style="color: white; text-shadow: 0 0 9px purple; font-size:80px ;">---LET'S PLAY---</br><b><i>Trivia
+        <span class="Texts" style="color: white; text-shadow: 0 0 9px purple;"><b><i>Trivia
               Time</i></b></span>
       </h1>
       <div class="load-bar_border">
@@ -88,7 +99,7 @@
   <script>
     setTimeout(function () {
       window.location.href = 'PlayerSelection.html';
-    }, 4000);
+    },4000);
   </script>
 </body>
 
