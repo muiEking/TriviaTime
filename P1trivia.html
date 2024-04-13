@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Trivia Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .correct {
+      animation: glow-green 2.2s infinite alternate;
+    }
+
+    .wrong {
+      animation: glow-red 2.2s infinite alternate;
+    }
+
+    @keyframes glow-green {
+      from {
+        box-shadow: 0 0 5px green;
+      }
+
+      to {
+        box-shadow: 0 0 20px green;
+      }
+    }
+
+    @keyframes glow-red {
+      from {
+        box-shadow: 0 0 5px red;
+      }
+
+      to {
+        box-shadow: 0 0 20px red;
+      }
+    }
+
+    .w3-display-middle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="w3-top w3-bar w3-white w3-wide w3-padding  w3-card">
+    <a href=" index.html" style="color:#142D4C;" class="w3-bar-item w3-button"><b>TT</b>Trivia Time</a>
+
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#HighScore" style="color:#142D4C;" class="w3-bar-item w3-button">HighScore</a>
+      <a href="#Online" style="color:#142D4C;" class="w3-bar-item w3-button">Online</a>
+      <a href="#About" style="color:#142D4C;" class="w3-bar-item w3-button">About</a>
+    </div>
+
+  </div>
+  <div class="w3-display-container">
+    <img class="w3-image" src="https://cdn.nitrome.com/generated-content/images/winter/tile.png" alt="Main-image">
+    <div class="w3-display-middle">
+      <h1 class="w3-xxlarge w3-text-white w3-wide">
+  <div class="row">
+    <h2 id="result"></h2>
+  </div>
+
+  <div id="container">
+    <h1>Trivia Game</h1>
+    <div id="trivia"></div>
+    <ul id="answers"></ul>
+    <div id="score">Score: 0</div>
+    <div id="targetDisplay"></div>
+    <div id="timer">Time: <span id="timer-display">0</span> seconds</div>
+  </div>
+        </div>
+        </div>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      startTimer(); // Start the timer when the page is loaded
+    });
+    window.onload = function () {
+      const target = localStorage.getItem('target');
+      document.getElementById('targetDisplay').innerText = 'Target to beat: ' + target;
+    };
+    let result = document.querySelector('#result');
+    let start = document.querySelector('#start');
+    let stop = document.querySelector('#stop');
+    let timerDisplay = document.querySelector('#timer-display'); // Reference to the timer display element
+
+    let timer;
+    let elapsedTime = 0;
+    const maxTime = 60; // Maximum time in seconds
+
+    // Check if the elapsed time has reached the maximum time
+    function timestop() {
+      elapsedTime++;
+      timerDisplay.textContent = elapsedTime;
+      if (elapsedTime >= maxTime) {
+        stopTimer();
+        alert("Times up you scored " + score + " points");
+        window.location.reload();
+      }
+    }
+    function startTimer() {
+      // Execute printDate() every second
+      timer = setInterval(timestop, 1000);
+    }
+
+    function stopTimer() {
+      clearInterval(timer); // Stop the timer
+    }
+
+  </script>
+</body>
+
+</html>

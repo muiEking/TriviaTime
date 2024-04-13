@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Retrieve Settings</title>
+</head>
+
+<body>
+  <h1>Game Page</h1>
+  <div id="targetDisplay"></div>
+  <script>
+    window.onload = function () {
+      const target = localStorage.getItem('target');
+      document.getElementById('targetDisplay').innerText = 'Target: ' + target;
+    };
+  </script>
+</body>
+
+</html>

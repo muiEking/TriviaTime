@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Trivia Time</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .w3-display-container {
+      position: relative;
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .w3-image {
+      display: block;
+      width: 100%;
+    }
+
+    .w3-display-middle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .load-bar_border {
+      width: 50%;
+      height: 40px;
+      margin: 0 auto;
+      display: flex;
+      position: relative;
+      border: solid 1px;
+      border-radius: 2%;
+      border-color: darkblue;
+      box-shadow: 0 0 9px purple;
+      overflow: hidden;
+    }
+
+    #loading-bar {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(to right, #ff00cc, #3333ff);
+      position: absolute;
+      animation: progress 4s ease-in-out forwards;
+    }
+
+    @keyframes progress {
+      0% {
+        width: 0;
+      }
+
+      100% {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Image in Display Container -->
+  <div class="w3-display-container">
+    <img class="w3-image" src="https://cdn.nitrome.com/generated-content/images/avalanche/tile.png" alt="Main-image">
+    <div class="w3-display-middle">
+      <h1 class="w3-xxlarge w3-text-white w3-wide">
+        <span class=" w3-hide-small" style="color: white; text-shadow: 0 0 9px purple; font-size:80px ;">---LET'S PLAY---</br><b><i>Trivia
+              Time</i></b></span>
+      </h1>
+      <div class="load-bar_border">
+        <div id="loading-bar"><b><em>LOADING...</em></b></div>
+      </div>
+    </div>
+    <!-- Page End -->
+  </div>
+  <script>
+    setTimeout(function () {
+      window.location.href = 'PlayerSelection.html';
+    }, 4000);
+  </script>
+</body>
+
+</html>

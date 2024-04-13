@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Maintenance Mode</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("https://preview.redd.it/an-icebreaker-wallpaper-1080p-i-put-together-and-have-been-v0-yujnm1ahc31b1.png?width=1920&format=png&auto=webp&s=2c0112d4670cc8893f71442d31ba6e51a859b155");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .maintenance-message {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.5); /* Adjust the last value (0.5) for transparency */
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 80%;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333333;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 55px #ff0000, 0 0 75px #ff0000;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 24px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #ff0000;
+            color: #ffffff;
+            padding: 15px 30px;
+            font-size: 24px;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #B22222;
+        }
+
+        #countdown {
+            font-size: 36px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="maintenance-message">
+        <h1>Sorry, we're in maintenance mode!</h1>
+        <p>Our multiplayer feature is currently undergoing maintenance. Please check back later.</p>
+        <a href="index.html" class="cta-button">Back to Homepage</a>
+        <div id="countdown"></div>
+    </div>
+
+    <script>
+        // Countdown timer
+        var countDownDate = new Date();
+        countDownDate.setDate(countDownDate.getDate() + 100); // Add 100 days
+        countDownDate.setHours(0, 0, 0, 0); // Set to midnight
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = "Maintenance ends in " + days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "Maintenance is over!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

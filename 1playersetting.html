@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>Player-1 setup</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="style.css">
+<style>
+  body {
+    color: #906;
+  }
+
+  ul {
+    list-style-type: none;
+    display: inline;
+    margin: 20px;
+    padding: 10px;
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 15px;
+  }
+
+  .Difficulty {
+    text-align: center;
+  }
+
+  .Timer {
+    text-align: center;
+  }
+
+  .ButtonSpec {
+    list-style-type: none;
+    display: inline;
+    margin: 25px;
+    padding: 10px;
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .w3-display-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #Butt:hover {
+    background-color: red;
+    cursor: pointer;
+  }
+
+  #Eazy:hover {
+    background-color: lightblue;
+    cursor: pointer;
+  }
+
+  #Mid:hover {
+    background-color: #FF8C00
+;
+    cursor: pointer;
+  }
+
+  #Hard:hover {
+    background-color: red;
+    cursor: pointer;
+  }
+
+  #Time1:hover {
+    background-color: lightblue;
+    cursor: pointer;
+  }
+
+  #Time3:hover {
+    background-color: #FF8C00;
+    cursor: pointer;
+  }
+
+  #Time5:hover {
+    background-color: red;
+    cursor: pointer;
+  }
+
+  p {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 60px;
+  }
+
+  .selected {
+    background-color: darkcyan;
+  }
+</style>
+
+<body>
+  <div class="w3-top w3-bar w3-white w3-wide w3-padding  w3-card">
+    <a href=" index.html" style="color:#142D4C;" class="w3-bar-item w3-button"><b>TT</b>Trivia Time</a>
+
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#HighScore" style="color:#142D4C;" class="w3-bar-item w3-button">HighScore</a>
+      <a href="#Online" style="color:#142D4C;" class="w3-bar-item w3-button">Online</a>
+      <a href="#About" style="color:#142D4C;" class="w3-bar-item w3-button">About</a>
+    </div>
+
+  </div>
+  <div class="w3-display-container">
+    <img class="w3-image" src="https://cdn.nitrome.com/generated-content/images/snowman/tile.png" alt="Main-image">
+    <div class="w3-display-middle">
+      <h1 class="w3-xxlarge w3-text-white w3-wide">
+        <h1><b><u><i>Choose Your Setting</i></u></b></h1>
+        <div class="Difficulty">
+          <p><b>Choose a difficulty</b></p>
+          <ul id="Eazy" onclick="selectDifficulty('Easy')"> Sissy😁</ul>
+          <ul id="Mid" onclick="selectDifficulty('Medium')">Punk⚔️</ul>
+          <ul id="Hard" onclick="selectDifficulty('Hard')"> Death🏴‍☠️</ul>
+        </div>
+        <div class="Timer">
+          <p><b>Select a time</b></p>
+          <ul id="Time1" onclick="selectTime('1')">1 min</ul>
+          <ul id="Time3" onclick="selectTime('3')">3 mins</ul>
+          <ul id="Time5" onclick="selectTime('5')">5 mins</ul>
+        </div>
+        <div class="ButtonSpec">
+          <button id="Butt" onclick="startGame()" style="background-color: #E75480; color: white; border: none; padding: 15px 30px; font-size: 20px; cursor: pointer; border-radius: 8px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);"><em><b>Ready</b></em></button>
+
+
+        </div>
+    </div>
+  </div>
+
+  <script>
+    let selectedDifficulty = null;
+    let selectedTime = null;
+    let target = 0;
+
+    function selectDifficulty(difficulty) {
+      selectedDifficulty = difficulty;
+      updateSelection(document.querySelectorAll('.Difficulty ul'), difficulty);
+      setTarget();
+    }
+
+    function selectTime(time) {
+      selectedTime = time;
+      updateSelection(document.querySelectorAll('.Timer ul'), time);
+      setTarget();
+    }
+
+    function updateSelection(elements, value) {
+      elements.forEach(el => {
+        el.classList.remove('selected');
+        if (el.textContent.includes(value)) {
+          el.classList.add('selected');
+        }
+      });
+    }
+
+    function setTarget() {
+      if (selectedDifficulty === 'Easy' && selectedTime === '1') {
+        target = 8;
+      } else if (selectedDifficulty === 'Medium' && selectedTime === '1') {
+        target = 12;
+      } else if (selectedDifficulty === 'Hard' && selectedTime === '1') {
+        target = 20;
+      }
+      else if (selectedDifficulty === 'Easy' && selectedTime === '3') {
+        target = 15;
+      }
+      else if (selectedDifficulty === 'Medium' && selectedTime === '3') {
+        target = 20;
+      }
+      else if (selectedDifficulty === 'Hard' && selectedTime === '3') {
+        target = 30;
+      }
+      else if (selectedDifficulty === 'Easy' && selectedTime === '5') {
+        target = 20;
+      }
+      else if (selectedDifficulty === 'Medium' && selectedTime === '5') {
+        target = 35;
+      }
+      else if (selectedDifficulty === 'Hard' && selectedTime === '5') {
+        target = 45;
+      }
+      else {
+        target = 0;
+      }
+      localStorage.setItem('target', target);
+      console.log('Target is now set to:', target);
+    }
+
+    function startGame() {
+      window.location.href = "P1trivia.html";
+    }
+  </script>
+</body>
+
+</html>
