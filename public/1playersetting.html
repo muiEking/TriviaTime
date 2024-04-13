@@ -9,7 +9,24 @@
   body {
     color: rgb(109, 0, 111);
   }
+  .navbar {
+            background-color: gainsboro;
+            overflow: hidden;
+            padding: 10px 20px;
+        }
 
+        .navbar a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar a:hover, .navbar a:focus {
+            background-color: #ddd;
+        }
   ul {
     list-style-type: none;
     display: inline;
@@ -29,19 +46,19 @@
   }
 
   .ButtonSpec {
-    list-style-type: none;
-    display: inline;
-    margin: 25px;
-    padding: 10px;
-    font-size: 40px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center; 
+   margin-top: 25px;
   }
 
   .w3-display-middle {
+    position: absolute; 
+    top: 50px;
+    left: 50%;  
+    transform: translateX(-50%); 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; 
+    align-items: center; 
   }
 
   #Butt:hover {
@@ -92,25 +109,44 @@
   .selected {
     background-color: rgb(0, 139, 260);
   }
+  @media only screen and (max-width: 600px) {
+            ul {
+                font-size: 16px;
+                margin: 5px;
+                padding: 3px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+            .navbar a{
+                float: none;
+                width: 100%;
+                text-align: center;
+            }
+        }
 </style>
 
 <body>
-  <div class="w3-top w3-bar w3-white w3-wide w3-padding  w3-card">
-    <a href=" index.html" style="color:#142D4C;" class="w3-bar-item w3-button"><b>TT</b>Trivia Time</a>
-
+  <div class="navbar">
+    <a href="index.html" style="color:#142D4C;" class="w3-bar-item w3-button"><b>TT</b>Trivia Time</a>
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <a href="#HighScore" style="color:#142D4C;" class="w3-bar-item w3-button">HighScore</a>
-      <a href="#Online" style="color:#142D4C;" class="w3-bar-item w3-button">Online</a>
-      <a href="#About" style="color:#142D4C;" class="w3-bar-item w3-button">About</a>
+        <a href="#HighScore" style="color:#142D4C;" class="w3-bar-item w3-button">HighScore</a>
+        <a href="#Online" style="color:#142D4C;" class="w3-bar-item w3-button">Online</a>
+        <a href="#About" style="color:#142D4C;" class="w3-bar-item w3-button">About</a>
     </div>
+</div>
+</div>
+<h1 class="w3-xxlarge w3-text-rgb(0, 139, 260)"><u><i>Choose Your Setting</i></u></h1>
 
-  </div>
-  <div class="w3-display-container">
-    <img class="w3-image" src="https://cdn.nitrome.com/generated-content/images/snowman/tile.png" alt="Main-image">
-    <div class="w3-display-middle">
-      <h1 class="w3-xxlarge w3-text-white w3-wide">
-        <h1><b><u><i>Choose Your Setting</i></u></b></h1>
+    <div class="w3-display-container">
+        <img class="w3-image" src="https://cdn.nitrome.com/generated-content/images/snowman/tile.png" alt="Main-image">
+        <div class="w3-display-middle">
         <div class="Difficulty">
           <p><b>Choose a difficulty</b></p>
           <ul id="Eazy" onclick="selectDifficulty('Easy')"> Easy</ul>
