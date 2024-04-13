@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="style.css">
 <style>
   body {
-    color: #906;
+    color: rgb(109, 0, 111);
   }
 
   ul {
@@ -55,13 +55,12 @@
   }
 
   #Mid:hover {
-    background-color: #FF8C00
-;
+    background-color: rgb(0, 255, 255);
     cursor: pointer;
   }
 
   #Hard:hover {
-    background-color: red;
+    background-color: rgb(0, 139, 260);
     cursor: pointer;
   }
 
@@ -71,12 +70,12 @@
   }
 
   #Time3:hover {
-    background-color: #FF8C00;
+    background-color: rgb(0, 255, 255);
     cursor: pointer;
   }
 
   #Time5:hover {
-    background-color: red;
+    background-color: rgb(0, 139, 260);
     cursor: pointer;
   }
 
@@ -91,7 +90,7 @@
   }
 
   .selected {
-    background-color: darkcyan;
+    background-color: rgb(0, 139, 260);
   }
 </style>
 
@@ -114,9 +113,9 @@
         <h1><b><u><i>Choose Your Setting</i></u></b></h1>
         <div class="Difficulty">
           <p><b>Choose a difficulty</b></p>
-          <ul id="Eazy" onclick="selectDifficulty('Easy')"> Sissy😁</ul>
-          <ul id="Mid" onclick="selectDifficulty('Medium')">Punk⚔️</ul>
-          <ul id="Hard" onclick="selectDifficulty('Hard')"> Death🏴‍☠️</ul>
+          <ul id="Eazy" onclick="selectDifficulty('Easy')"> Easy</ul>
+          <ul id="Mid" onclick="selectDifficulty('Medium')">Medium</ul>
+          <ul id="Hard" onclick="selectDifficulty('Hard')"> Hard</ul>
         </div>
         <div class="Timer">
           <p><b>Select a time</b></p>
@@ -133,7 +132,7 @@
   </div>
 
   <script>
-    let selectedDifficulty = null;
+   let selectedDifficulty = null;
     let selectedTime = null;
     let target = 0;
 
@@ -157,7 +156,6 @@
         }
       });
     }
-
     function setTarget() {
       if (selectedDifficulty === 'Easy' && selectedTime === '1') {
         target = 8;
