@@ -190,8 +190,12 @@
     }
 
     function startGame() {
-      window.location.href = "P1trivia.html";
+      if(!selectedDifficulty || !selectedTime) {
+        alert('Please select both a difficulty and a time before starting the game.');
+      }else{
+        window.location.href = "P1trivia.html";
     }
+  }
   </script>
 </body>
 
