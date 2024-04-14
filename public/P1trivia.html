@@ -40,36 +40,60 @@
     }
 
     .w3-display-middle {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    position: absolute; 
+    top: 50px;
+    left: 50%;  
+    transform: translateX(-50%); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+  }
+  #container {
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
     }
+    #Choices li:hover {
+      background-color: lightgray;
+      cursor: pointer;
+    }
+    @media only screen and (max-width: 600px) {
+      #container {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      #trivia {
+        font-size: 18px;
+      }
+
+      #answers {
+        font-size: 16px;
+      }
+
+      #score,
+      #targetDisplay,
+      #timer {
+        font-size: 14px;
+      }
+    } 
   </style>
 </head>
 
 <body>
-  <div class="w3-top w3-bar w3-white w3-wide w3-padding  w3-card">
-    <a href=" index.html" style="color:#142D4C;" class="w3-bar-item w3-button"><b>TT</b>Trivia Time</a>
-
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#HighScore" style="color:#142D4C;" class="w3-bar-item w3-button">HighScore</a>
-      <a href="#Online" style="color:#142D4C;" class="w3-bar-item w3-button">Online</a>
-      <a href="#About" style="color:#142D4C;" class="w3-bar-item w3-button">About</a>
-    </div>
-
-  </div>
   <div class="w3-display-container">
     <div class="w3-display-middle">
       <h1 class="w3-xxlarge w3-text-white w3-wide">
   <div class="row">
     <h2 id="result"></h2>
   </div>
-
+  <h1>Trivia Game</h1>  
+  <div id="trivia"></div>
   <div id="container">
-    <h1>Trivia Game</h1>
-    <div id="trivia"></div>
     <ul id="answers"></ul>
     <div id="score">Score: 0</div>
     <div id="targetDisplay"></div>
