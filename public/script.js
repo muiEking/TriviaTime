@@ -19,7 +19,7 @@ function fetchTrivia() {
 
 function displayTrivia(data) {
   const questionElement = document.getElementById('trivia');
-  const answersElement = document.getElementById('answers');
+  const answersElement = document.getElementById('Choices');
 
   questionElement.innerHTML = data.question;
   answersElement.innerHTML = '';
@@ -30,7 +30,7 @@ function displayTrivia(data) {
 
   answers.forEach(answer => {
     const li = document.createElement('li');
-    li.classList.add('answer');
+    li.classList.add('Choices');
     li.innerHTML = answer;
     li.addEventListener('click', () => {
       if (answer === data.correct_answer) {

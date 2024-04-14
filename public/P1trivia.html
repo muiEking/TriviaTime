@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="style.css">
   <style>
-     body{
+    body{
       background-image: url("https://cdn.nitrome.com/generated-content/images/winter/tile.png");
     }
     .correct {
@@ -80,7 +80,7 @@
       #timer {
         font-size: 14px;
       }
-    } 
+    }
   </style>
 </head>
 
@@ -91,10 +91,12 @@
   <div class="row">
     <h2 id="result"></h2>
   </div>
-  <h1>Trivia Game</h1>  
-  <div id="trivia"></div>
+ <h1>Trivia Game</h1>
+ 
+ <div id="trivia"></div>
+ 
   <div id="container">
-    <ul id="answers"></ul>
+    <ul id="Choices"></ul>
     <div id="score">Score: 0</div>
     <div id="targetDisplay"></div>
     <div id="timer">Time: <span id="timer-display">0</span> seconds</div>
@@ -103,7 +105,7 @@
         </div>
   <script src="script.js"></script>
   <script>
-     let maxTime = 0; 
+    let maxTime = 0; 
     window.onload = function () {
       const Timing = localStorage.getItem('Time');
       maxTime = 60 * Timing; 
@@ -112,12 +114,12 @@
       startTimer();
     };
     let result = document.querySelector('#result');
-    let start = document.querySelector('#start');
-    let stop = document.querySelector('#stop');
     let timerDisplay = document.querySelector('#timer-display'); // Reference to the timer display element
 
     let timer;
     let elapsedTime = 0;
+    
+
     // Check if the elapsed time has reached the maximum time
     function timestop() {
       elapsedTime++;
