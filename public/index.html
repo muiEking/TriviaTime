@@ -9,28 +9,22 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body {
-      margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      background-image: url("https://cdn.nitrome.com/generated-content/images/avalanche/tile.png");
+      background-image: url(  "https://cdn.nitrome.com/generated-content/images/avalanche/tile.png");
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
     .w3-display-container {
       position: relative;
       max-width: 1500px;
-      margin: 0 auto;
-    }
-
-    .w3-image {
-      display: block;
-      width: 100%;
+      margin: auto;
     }
 
     .w3-display-middle {
       position: absolute;
-      top: 50%;
-      left: 50%;
+      left:50%;
+      bottom: 75%;
       transform: translate(-50%, -50%);
       text-align: center;
       width: 100%;
@@ -83,7 +77,6 @@
 </head>
 
 <body>
-  <!-- Image in Display Container -->
   <div class="w3-display-container">
     <div class="w3-display-middle">
       <h1 class="w3-xxlarge w3-text-white w3-wide">
@@ -94,12 +87,11 @@
         <div id="loading-bar"><b><em>LOADING...</em></b></div>
       </div>
     </div>
-    <!-- Page End -->
   </div>
   <script>
     setTimeout(function () {
       window.location.href = 'PlayerSelection.html';
-    },4000);
+    }, 4000);
   </script>
 </body>
 
