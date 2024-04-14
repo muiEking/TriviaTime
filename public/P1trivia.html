@@ -103,12 +103,13 @@
         </div>
   <script src="script.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      startTimer(); // Start the timer when the page is loaded
-    });
+     let maxTime = 0; 
     window.onload = function () {
+      const Timing = localStorage.getItem('Time');
+      maxTime = 60 * Timing; 
       const target = localStorage.getItem('target');
       document.getElementById('targetDisplay').innerText = 'Target to beat: ' + target;
+      startTimer();
     };
     let result = document.querySelector('#result');
     let start = document.querySelector('#start');
@@ -117,8 +118,6 @@
 
     let timer;
     let elapsedTime = 0;
-    const maxTime = 60; // Maximum time in seconds
-
     // Check if the elapsed time has reached the maximum time
     function timestop() {
       elapsedTime++;
